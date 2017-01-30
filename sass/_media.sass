@@ -1,0 +1,201 @@
+@import "bourbon"
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1230px)
+	/**/
+	.header-menu
+		display: none
+		margin: 0
+		padding: 0
+		background: #fff
+		top: 0
+		color: #000
+		right: 0
+		padding: 107px 40px 30px 37px
+		width: 312px
+		max-width: 320px
+		position: fixed
+		letter-spacing: 0.04em
+		&__item
+			display: block
+			margin: 0
+		&__link
+			color: #000
+			font-weight: 300
+			line-height: 1.2em
+			margin-bottom: 19px
+		&__link
+			padding-left: 15px
+			position: relative
+			&:before
+				content: ""
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 4px 0 4px 8px
+				border-color: transparent transparent transparent #d1d1d1
+			&:hover
+				font-weight: 700
+				color: #000
+				&:before
+					border-color: transparent transparent transparent #2ac4ea
+	.header-submenu
+		display: block
+		+list-clear
+		margin-left: 35px
+		margin-bottom: 15px
+	.cross
+		display: block
+	.box-logo
+		display: block
+		width: 100%
+	.c-hamburger
+		display: block
+	.phone
+		position: absolute
+		top: 0
+		right: 102px
+	.about
+		&__wrapper
+			max-width: 640px
+	.feature
+		float: none
+	.callback
+		&__descr
+			margin-bottom: 13px
+	.input
+		margin-right: 0
+		display: block
+		margin: 0 auto
+		padding-top: 34px
+	.button
+		&--submit
+			margin-top: 30px
+	.invite-card
+		float: none
+		margin: 0 auto
+		margin-bottom: 48px
+		&:last-child
+			margin: 0 auto
+
+	.slider
+		&:before
+			max-width: 520px
+	.slide
+		max-width: 520px
+		&__content
+			max-width: 475px
+	.news-item
+		float: none
+		margin: 0 auto
+		margin-bottom: 53px
+		&:last-child
+			margin: 0 auto
+	.fmenu
+		width: 33%
+		&:first-child
+			margin-left: 0
+	.button
+		&--submit
+			width: 280px
+
+@media only screen and (max-width : 680px)
+	.callback
+		&__descr
+			line-height: 1.9em
+			margin-bottom: 0
+	.fmenu
+		width: 100%
+		max-width: 215px
+		float: none
+		margin: 0 auto
+		margin-bottom: 20px
+		&:first-child
+			margin: 0 auto
+			margin-bottom: 20px
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 630px)
+	/**/
+	.wrapper
+		padding: 0 13px
+	.box-logo
+		margin-bottom: 15px
+		float: none
+	.phone
+		position: relative
+		right: 0
+		left: 0
+		width: 248px
+		height: 48px
+		display: block
+		margin: 0 auto
+		float: none
+	.slick-next, .slick-prev
+		top: 25%
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 450px)
+	/**/
+	.banner
+		&__text
+			&--img
+				text-align: left
+	.feature
+		text-align: center
+		&__img
+			float: none
+			margin-bottom: 20px
+		&__text
+			margin-left: 0
+			text-align: left
+	.slider
+		min-height: 480px
+		&:before
+			height: 350px
+	.slide
+		min-height: 450px
+		&__content
+			padding: 0 20px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

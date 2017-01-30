@@ -1,0 +1,1035 @@
+@import "bourbon"
+@import "vars"
+@import "libs"
+
+/* =================== RESET =================== */
+
+body
+  margin: 0px
+  padding: 0px
+  font-family: Tahoma,Arial, sans-serif
+  background-color: #FFFFFF
+  height: 100%
+  position: relative
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main
+  display: block
+
+body
+  line-height: 1
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+table
+  border-collapse: collapse
+  border-width: 0px
+  padding: 0px
+  margin: 0px
+
+html
+  height: 100%
+  -webkit-text-size-adjust: none
+  -ms-text-size-adjust: none
+
+input, textarea
+  color: #333
+  outline: none
+  border-radius: 0
+  -moz-border-radius: 0
+  -webkit-border-radius: 0
+  -webkit-appearance: none
+
+input
+  &[type="button"], &[type="submit"]
+    cursor: pointer
+
+button
+  cursor: pointer
+
+td
+  margin: 0px
+  padding: 0px
+
+form
+  padding: 0px
+  margin: 0px
+
+a
+  color: #000100
+  -moz-transition: all 0.2s linear
+  -o-transition: all 0.2s linear
+  -ms-transition: all 0.2s linear
+  -webkit-transition: all 0.2s linear
+  transition: all 0.2s linear
+  text-decoration: none
+  outline: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+input
+  &[type=submit], &[type=button]
+    -webkit-appearance: none
+    outline: none
+
+button
+  -webkit-appearance: none
+  outline: none
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+/* =================== VARIABLES / MIXINS =================== */
+
+$em-base: 17px !global;
+
+$font-stack: Helvetica, sans-serif
+$font-color: #000
+$accent-color: #2ac4ea
+
+=list-clear
+	list-style: none
+	padding: 0
+	margin: 0
+
+//Custom styles here
+
+.clearfix, .box-logo, .line, .input
+	&:after
+		content: "";
+		display: table;
+		clear: both;
+
+body
+	font-family: $font-stack
+	font-size: 17px
+	font-weight: 300
+	color: $font-color
+	line-height: 1.824em
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	letter-spacing: 0.06em
+
+h1
+	font-size: em(37px)
+	text-transform: uppercase
+	letter-spacing: 0.02em
+
+h2
+	font-size: em(23px)
+	text-transform: uppercase
+	letter-spacing: 0.06em
+	font-weight: 500
+
+h4
+	font-size: em(17px)
+	font-weight: 500
+	text-transform: uppercase
+	line-height: 1.471em
+	letter-spacing: 0.06em
+
+.container
+	position: relative
+
+.wrapper
+	min-width: 320px
+	max-width: 1270px
+	padding: 0 20px
+	margin: 0 auto
+	position: relative
+
+/* =================== HEADER =================== */
+
+.main-header
+	background: #636363
+	min-height: 636px
+	background-size: cover
+	background-position: center
+	position: relative
+	padding-top: 32px
+	padding-bottom: 35px
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: transparent
+		background-color: rgba(0,0,0,0.59)
+
+.top-line
+	position: relative
+
+.box-logo
+	float: left
+	&__link
+		margin-top: 8px
+		display: inline-block
+		font-size: em(37px)
+		text-transform: uppercase
+		font-weight: 500
+		color: #fff
+		letter-spacing: 0.02em
+		max-width: 180px
+		&:hover
+			text-decoration: none
+			color: #fff
+
+.header-menu
+	+list-clear
+	float: right
+	margin-right: 70px
+	margin-top: 8px
+	z-index: 1000
+	&__item
+		display: inline-block
+		margin: 0 19px
+		letter-spacing: 0.05em
+		font-weight: 300
+		position: relative
+	&__link
+		color: #fff
+		font-size: em(18px)
+		display: block
+		&:after
+			content: ""
+			position: absolute
+			top: 100%
+			left: 0
+			height: 0
+			width: 100%
+			background: #fff
+			transition: all 0.2s ease
+			opacity: 0
+			transform: translateY(-7px)
+		&:hover
+			text-decoration: none
+			color: #fff
+			text-shadow: 0 0 0px #fff
+			&:after
+				height: 2px
+				opacity: 1
+				transform: translateY(0)
+
+.header-submenu
+	display: none
+	margin-left: 35px
+	margin-bottom: 15px
+	font-size: em(15px)
+	font-weight: 300
+	&__link
+		color: #000
+		padding-left: 10px
+		position: relative
+		&:before
+			content: ""
+			position: absolute
+			top: 50%
+			left: 0
+			transform: translateY(-50%)
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 2.5px 0 2.5px 5px
+			border-color: transparent transparent transparent #d1d1d1
+
+.cross
+	display: none
+	z-index: 1001
+	position: absolute
+	top: 40px
+	right: 20px
+	width: 40px
+	height: 40px
+	cursor: pointer
+	&:before, &:after
+		content: ""
+		position: absolute
+		top: 50%
+		left: 0
+		width: 110%
+		height: 3px
+		background: #000
+		transform: translateY(-50%)
+	&:before
+		transform: rotate(45deg)
+	&:after
+		transform: rotate(-45deg)
+
+.phone
+	color: #fff
+	font-weight: 700
+	font-size: em(21px)
+	letter-spacing: 0.02em
+	display: inline-block
+	padding: 11px 20px
+	border: 3px solid #2ac4ea
+	line-height: 1
+	float: right
+	&:hover, &:active, &:visited
+		color: #fff
+		text-decoration: none
+
+@keyframes incr
+	from
+		opacity: 0
+		-webkit-transform: scale(2)
+		-moz-transform: scale(2)
+		-ms-transform: scale(2)
+		-o-transform: scale(2)
+		transform: scale(2)
+	to
+		opacity: 1
+		-webkit-transform: scale(1)
+		-moz-transform: scale(1)
+		-ms-transform: scale(1)
+		-o-transform: scale(1)
+		transform: scale(1)
+
+.banner
+	margin-top: 145px
+	text-align: center
+	&__title
+		color: #fff
+		margin: 0
+		margin-bottom: 42px
+		animation: incr 2s
+		line-height: 1.3em
+	&__text
+		font-size: em(31px)
+		font-weight: 100
+		display: block
+		text-transform: uppercase
+		color: #fff
+		margin-bottom: 12px
+		letter-spacing: 0.02em
+		line-height: 1.3em
+		&--img
+			padding-left: 60px
+			display: inline-block
+			position: relative
+			&:before
+				content: ""
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+				width: 39px
+				height: 39px
+				background: url(../img/icons/clock.png) no-repeat center
+
+
+.button
+	position: relative
+	display: inline-block
+	font-size: 1.12em
+	text-transform: uppercase
+	letter-spacing: 0.16em
+	font-weight: 700
+	color: #fff
+	padding: 14px 22px
+	background: none
+	border: 3px solid $accent-color
+	line-height: 1
+	z-index: 998
+	overflow: hidden
+	&:before, &:after
+		content: ''
+		position: absolute
+		z-index: -1
+		width: 120%
+		height: 532%
+		transition: all 1s
+		transform: translateY(-50%) rotate(45deg)
+		background: $accent-color
+		opacity: 1
+	&:before
+		top: 50%
+		left: 50%
+	&:after
+		top: 50%
+		right: 50%
+	&:hover
+		text-decoration: none
+		background: transparent
+		color: #fff
+		&:before, &:after
+			height: 75%
+	&--header
+		margin-top: 50px
+		margin-bottom: 34px
+	&--submit
+		padding: 13px 69px
+		font-size: em(18px)
+		&:before, &:after
+			height: 550%
+
+@keyframes scrollbtn
+	0%,100%,20%,50%,80%
+		transform: translateY(0)
+	40%
+		transform: translateY(-6px)
+	60%
+		transform: translateY(-3px)
+
+
+
+.down-button
+	width: 25px
+	height: 56px
+	background: url(../img/icons/scroll.png) no-repeat center
+	cursor: pointer
+	margin: 0 auto
+	position: relative
+	animation: scrollbtn 2s infinite
+
+/* =================== SECTIONS =================== */
+
+.section-title
+	padding-bottom: 25px
+	position: relative
+	display: block
+	text-align: center
+	line-height: 1
+	margin: 0
+	&:before
+		content: ""
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		height: 3px
+		width: 66px
+		background: $accent-color
+	&--about
+		color: #000
+		margin-bottom: 57px
+	&--why
+		margin-bottom: 60px
+	&--reviews
+		margin-bottom: 16px
+	&--last-news
+		margin-bottom: 86px
+
+/* == SECTION ABOUT == */
+
+.about
+	background: #fff
+	padding: 85px 0 28px
+	&__wrapper
+		max-width: 970px
+		margin: 0 auto
+
+.section-text
+	margin: 0
+	margin-bottom: 31px
+
+/* == SECTION WHY US == */
+
+.why-us
+	background: #f7f7f7
+	padding: 61px 0 28px
+
+.line
+	max-width: 1070px
+	margin: 0 auto
+
+.feature
+	max-width: 485px;
+	margin: 0 auto;
+	margin-bottom: 41px
+	&__img
+		max-width: 80px
+		height: auto
+		float: left
+		position: relative
+		top: -8px
+	&__text
+		margin-left: 100px
+	&__title
+		font-size: em(18px)
+		font-weight: 500
+	&__descr
+		margin: 0
+	&--left
+		float: left
+	&--right
+		float: right
+
+/* == SECTION CALLBACK == */
+
+.callback
+	background-size: cover
+	background-position: center
+	position: relative
+	min-height: 252px
+	color: #fff
+	padding: 42px 0 58px
+	text-align: center
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,0.82)
+	&__box
+		max-width: 960px
+		margin: 0 auto
+	&__title
+		font-size: em(23px)
+		font-weight: 700
+		text-transform: uppercase
+		margin: 0
+		letter-spacing: 0.02em
+		margin-bottom: 9px
+	&__descr
+		font-size: em(20px)
+		font-weight: 100
+		text-transform: uppercase
+		letter-spacing: 0.08em
+		line-height: 1
+		margin-bottom: 43px
+
+/* --- INPUT MODULE --- */
+
+.input
+	position: relative
+	z-index: 1
+	display: inline-block
+	max-width: 280px
+	width: 100%
+	vertical-align: top
+	margin-right: 37px
+
+.input__field
+	position: relative
+	display: block
+	float: right
+	padding: 0.8em
+	width: 60%
+	border: none
+	border-radius: 0
+	background: #f0f0f0
+	color: #aaa
+	font-weight: bold
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+	-webkit-appearance: none
+	&:focus
+		outline: none
+
+.input__label
+	display: inline-block
+	float: right
+	padding: 0 1em
+	width: 40%
+	color: #6a7989
+	font-weight: bold
+	font-size: 70.25%
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+.input__label-content
+	position: relative
+	display: block
+	padding: 17px 26px
+	width: 100%
+	line-height: 1
+
+.input__field--akira
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 10
+	display: block
+	padding: 0 1em
+	width: 100%
+	height: 100%
+	background: transparent
+	text-align: center
+	font-weight: 300
+	color: #d4d1d1
+
+.input__label--akira
+	padding: 0
+	width: 100%
+	background: transparent
+	border: 1px solid #fff
+	color: #d4d1d1
+	cursor: text
+	font-weight: 300
+	text-transform: uppercase
+	font-size: em(15px)
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: transparent
+		-webkit-transform: scale3d(0.97, 0.85, 1)
+		transform: scale3d(0.97, 0.85, 1)
+		-webkit-transition: -webkit-transform 0.3s
+		transition: transform 0.3s
+
+.input__label-content--akira
+	transition: transform 0.3s
+
+.input__field--akira:focus + .input__label--akira::before, .input--filled .input__label--akira::before
+	transform: scale3d(0.99, 0.95, 1)
+
+.input__field--akira:focus + .input__label--akira, .input--filled .input__label--akira
+	cursor: default
+	pointer-events: none
+
+.input__field--akira:focus + .input__label--akira .input__label-content--akira, .input--filled .input__label-content--akira
+	transform: translate3d(0, -2.8em, 0)
+
+
+/* == SECTION INVITE == */
+
+.invite
+	background: #f7f7f7
+	padding: 64px 0 85px
+	&__wrapper
+		max-width: 970px
+		margin: 0 auto
+
+.invite-card
+	max-width: 270px
+	background: #fff
+	padding: 10px 10px 20px
+	text-align: center
+	float: left
+	margin-right: 80px
+	box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.19)
+	display: block
+	color: #000
+	transition: box-shadow 0.5s ease
+	&:hover
+		text-decoration: none
+		color: #000
+		box-shadow: 0 5px 20px 0 rgba(125,125,125,.2)
+	&:last-child
+		margin-right: 0
+	&__img
+		max-width: 100%
+		height: auto
+		margin-bottom: 11px
+	&__title
+		text-align: center
+		margin: 0
+		margin-bottom: 19px
+	&__text
+		margin: 0 8px
+		margin-bottom: 36px
+		line-height: 1.412em
+		letter-spacing: 0.06em
+		text-align: left
+	&__more
+		text-transform: uppercase
+		color: #2ac4e9
+		font-weight: 300
+		display: inline-block
+		padding-right: 23px
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			top: 50%
+			right: 0
+			transform: translateY(-60%);
+			width: 10px
+			height: 19px
+			background: url(../img/icons/arrow-right.png) center no-repeat
+
+/* == SECTION REVIEWS & SLIDER == */
+
+.reviews
+	padding: 75px 0 62px
+
+.owl-wrapper
+	max-width: 1046px
+	margin: 0 auto
+
+.slider
+	max-width: 1050px
+	min-height: 435px
+	margin: 0 auto
+	position: relative
+	overflow: visible
+	&:before
+		content: ""
+		position: absolute
+		top: 90px
+		left: 50%
+		transform: translateX(-50%)
+		width: 100%
+		max-width: 770px
+		height: 270px
+		background: #fff
+		box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.19)
+
+.sl
+	min-height: 360px
+
+.slide
+	max-width: 770px
+	min-height: 325px
+	margin: 0 auto
+	position: relative
+	text-align: center
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 19px
+		width: 75px
+		height: 62px
+		background-image: url(../img/slide-icon.png)
+		background-size: cover
+		background-position: center
+	&__content
+		max-width: 610px
+		margin: 0 auto
+		position: relative
+		top: 37px
+	&__img
+		width: 104px
+		height: 104px
+		background-size: cover
+		background-position: center
+		margin: 0 auto
+		margin-bottom: 29px
+	&__name
+		font-weight: 500
+		line-height: 1
+		margin-bottom: 19px
+
+/* == SECTION NEWS == */
+
+.last-news
+	padding: 64px 0 110px
+	&__content
+		max-width: 1120px
+		margin: 0 auto
+
+.news-item
+	display: block
+	padding: 32px 28px 17px
+	max-width: 330px
+	background: #fff
+	box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.19)
+	color: #000
+	transition: box-shadow 0.5s ease
+	text-align: center
+	float: left
+	margin-right: 64px
+	&:last-child
+		margin-right: 0
+	&:hover
+		text-decoration: none
+		color: #000
+		box-shadow: 0 5px 20px 0 rgba(125,125,125,0.2)
+	&__img
+		margin-bottom: 23px
+		max-width: 100%
+		height: auto
+	&__title
+		margin: 0
+		margin-bottom: 4px
+	&__descr
+		text-align: left
+		margin: 0
+		font-size: em(16px)
+		line-height: 1.5em
+		margin-bottom: 25px
+	&__more
+		color: #2ac4ea
+		text-transform: uppercase
+		font-weight: 300
+		padding-right: 27px
+		display: inline-block
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			top: 50%
+			right: 0
+			transform: translateY(-60%);
+			width: 10px
+			height: 19px
+			background: url(../img/icons/arrow-right.png) center no-repeat
+
+/* == SECTION TOP-FOOTER == */
+
+.top-footer
+	padding: 60px 0
+	background: #e8e8e8
+
+.fmenu
+	+list-clear
+	color: #000
+	width: 25%
+	float: left
+	padding: 0 15px
+	&:first-child
+		margin-left: 25%
+	&__item
+	&__link
+		color: #000
+		&:hover
+			text-decoration: underline
+			color: #000
+
+
+/* =================== FOOTER =================== */
+
+.footer
+	padding: 23px 0 21px
+	background: #2e2e2e
+	font-size: em(16px)
+	letter-spacing: 0.04em
+	&__copy
+		color: #808080
+		text-align: center
+
+/* =================== SLICK SLIDER =================== */
+
+.slick-slider
+	position: relative
+	display: block
+	box-sizing: border-box
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	-webkit-touch-callout: none
+	-khtml-user-select: none
+	-ms-touch-action: pan-y
+	touch-action: pan-y
+	-webkit-tap-highlight-color: transparent
+
+.slick-list
+	position: relative
+	display: block
+	overflow: hidden
+	margin: 0
+	padding: 0
+	&:focus
+		outline: none
+	&.dragging
+		cursor: pointer
+		cursor: hand
+
+.slick-slider
+	.slick-track, .slick-list
+		-webkit-transform: translate3d(0, 0, 0)
+		-moz-transform: translate3d(0, 0, 0)
+		-ms-transform: translate3d(0, 0, 0)
+		-o-transform: translate3d(0, 0, 0)
+		transform: translate3d(0, 0, 0)
+
+.slick-track
+	position: relative
+	top: 0
+	left: 0
+	display: block
+	&:before
+		display: table
+		content: ''
+	&:after
+		display: table
+		content: ''
+		clear: both
+
+.slick-loading .slick-track
+	visibility: hidden
+
+.slick-slide
+	display: none
+	float: left
+	height: 100%
+	min-height: 1px
+
+[dir='rtl'] .slick-slide
+	float: right
+
+.slick-slide
+	img
+		display: block
+	&.slick-loading img
+		display: none
+	&.dragging img
+		pointer-events: none
+
+.slick-initialized .slick-slide
+	display: block
+
+.slick-loading .slick-slide
+	visibility: hidden
+
+.slick-vertical .slick-slide
+	display: block
+	height: auto
+	border: 1px solid transparent
+
+.slick-arrow.slick-hidden
+	display: none
+
+/* --- CUSTOM SLICK --- */
+
+.slick-slider
+	overflow: visible
+
+.slick-slide
+	outline: 0
+	cursor: pointer
+
+.slick-dots
+	margin: 0
+	padding: 0
+	list-style: none
+	position: absolute
+	bottom: 0
+	left: 50%
+	transform: translateX(-50%)
+	height: 13px
+	li
+		display: inline-block
+		margin-right: 16px
+		width: 13px
+		height: 13px
+		&:last-child
+			margin-right: 0
+	.slick-active
+		button
+			background: #2fc5ea
+	button
+		width: 13px
+		height: 13px
+		font-size: 0
+		border-radius: 50%
+		border: 0
+		background: transparent
+		box-shadow: inset 0 0 0 1px #2fc5ea
+		outline: none
+		vertical-align: top
+
+.slick-prev, .slick-next
+	position: absolute
+	font-size: 0
+	top: 50%
+	width: 40px
+	height: 40px
+	transition: transform 0.6s ease
+	transform: translateX(0)
+	z-index: 999
+	border: 0
+	outline: none
+
+.slick-prev
+	left: 0
+	background: url(../img/icons/arrow-slider-prev.png) no-repeat center
+	&:hover
+		transform: translateX(-20px)
+
+
+.slick-next
+	right: 0
+	background: url(../img/icons/arrow-slider-next.png) no-repeat center
+	&:hover
+		transform: translateX(20px)
+
+
+/* ================ MOBILE BUTTON ================ */
+
+.c-hamburger
+	display: none
+	float: right
+	position: relative
+	overflow: hidden
+	margin: 0
+	padding: 0
+	width: 52px
+	height: 48px
+	font-size: 0
+	text-indent: -9999px
+	appearance: none
+	box-shadow: none
+	border-radius: none
+	border: none
+	cursor: pointer
+	transition: background 0.3s
+	&:focus
+		outline: none
+	span
+		display: block
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		left: 0
+		right: 0
+		height: 3px
+		background: white
+		&::before, &::after
+			position: absolute
+			display: block
+			left: 0
+			width: 100%
+			height: 3px
+			background-color: #fff
+			content: ""
+		&::before
+			top: -13px
+		&::after
+			bottom: -13px
+
+.c-hamburger--htx
+	background-color: transparent
+	span
+		transition: background 0s 0.3s
+		&::before, &::after
+			transition-duration: 0.3s, 0.3s
+			transition-delay: 0.3s, 0s
+		&::before
+			transition-property: top, transform
+		&::after
+			transition-property: bottom, transform
+
+
+@import "media"
